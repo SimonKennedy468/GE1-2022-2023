@@ -10,17 +10,28 @@ public class cube1 : MonoBehaviour
         
     }
 
+    float waitTime = 1.0f;
+    float updateTime = 0.1f;
     
     // Update is called once per frame
     void Update()
     {
-        System.Random spin = new System.Random();
+        if(Time.time > waitTime)
+        {
+            waitTime += updateTime;
 
-        int x = spin.Next(1,2);
-        int y = spin.Next(1,2);
-        int z = spin.Next(1,2);
-    
-        transform.Rotate(x, y, z);
-        //transform.Translate(0, 0.01f, 0);
+            System.Random spin = new System.Random();
+
+            int x = spin.Next(-1,1);
+            int y = spin.Next(-1,1);
+            int z = spin.Next(-1,1);
+
+        
+            transform.Rotate(x, y, z);
+            //transform.Translate(0, 0.01f, 0);
+            waitTime = 0;
+        }
     }
 }
+
+//comment for 2nd commit
