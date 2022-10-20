@@ -20,6 +20,19 @@ public class AITank : MonoBehaviour {
             // Put code here to draw the gizmos
             // Use sin and cos to calculate the positions of the waypoints 
             // You can draw gizmos using
+
+            for(int i = 0; i < 6; i++)
+            {
+                float angle = i * Mathf.PI * 2 / 6;
+                float x = Mathf.Cos(angle) * 8f;
+                float z = Mathf.Sin(angle) * 8f;
+
+                Vector3 pos = transform.position + new Vector3(x,0,z);
+                //waypoint.Add(pos);
+                
+                Gizmos.color = Color.green;
+                Gizmos.DrawWireSphere(pos, 1);
+            }
             // Gizmos.color = Color.green;
             // Gizmos.DrawWireSphere(pos, 1);
         }
