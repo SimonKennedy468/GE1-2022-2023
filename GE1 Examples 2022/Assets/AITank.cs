@@ -102,7 +102,5 @@ public class AITank : MonoBehaviour {
             GameManager.Log("In range");
         }
         GameManager.Log("Current Angle = " + curr_angle);
-        
-
     }
 }
