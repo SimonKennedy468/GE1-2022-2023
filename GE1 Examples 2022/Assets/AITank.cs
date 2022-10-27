@@ -28,7 +28,6 @@ public class AITank : MonoBehaviour {
                 float z = Mathf.Sin(angle) * radius;
 
                 Vector3 pos = transform.position + new Vector3(x,0,z);
-                //waypoint.Add(pos);
                 
                 Gizmos.color = Color.green;
                 Gizmos.DrawWireSphere(pos, 1);
