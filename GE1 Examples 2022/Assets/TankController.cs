@@ -64,7 +64,7 @@ public class TankController : MonoBehaviour
 
 
     Coroutine shootCR = null;
-    public void Shoot(InputAction.CallbackContext context)
+    public void Shoot(InputAction.CallbackContext context) 
     {
         Debug.Log(context);
         if (context.phase == InputActionPhase.Started && shootCR == null)
@@ -76,7 +76,6 @@ public class TankController : MonoBehaviour
             StopCoroutine(shootCR);
             shootCR = null;
         }
-
 
         //Debug.Log(context.performed);
     }

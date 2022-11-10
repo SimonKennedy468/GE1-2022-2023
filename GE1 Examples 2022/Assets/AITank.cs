@@ -8,10 +8,10 @@ public class AITank : MonoBehaviour
     public int count = 5;
     public float radius = 5;
 
-    public float speed;
-    public float fov;
+    public float speed = 3;
+   // public float fov;
 
-    public Transform player;
+   // public Transform player;
 
     void SetUpWaypoints()
     {
@@ -67,7 +67,7 @@ public class AITank : MonoBehaviour
         Quaternion q = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(totarget), Time.deltaTime);
         //transform.rotation = q;
         //transform.Translate(0, 0, speed * Time.deltaTime);
-
+        /*
         Vector3 toPlayer = player.position - transform.position;
         toPlayer.Normalize();
         float dot = Vector3.Dot(toPlayer, transform.forward);
@@ -82,5 +82,6 @@ public class AITank : MonoBehaviour
         {
             GameManager.Log("I can't see you");
         }
+        */
     }
 }
