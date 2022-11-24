@@ -2,8 +2,9 @@
 
 [![Video](http://img.youtube.com/vi/NMDupdv85FE/0.jpg)](http://www.youtube.com/watch?NMDupdv85FE)
 
+- [![World Videophone](images/wvp.jpg)](https://teams.microsoft.com/l/meetup-join/19%3ameeting_OWNkOTU5MWMtZGRkYi00ZDIxLWI3NzAtZjFjMjc3Y2NiMmVl%40thread.v2/0?context=%7b%22Tid%22%3a%22766317cb-e948-4e5f-8cec-dabc8e2fd5da%22%2c%22Oid%22%3a%2261aab78b-a857-4647-9668-83d4cca5de03%22%7d)
+
 ## Resources
-- [World Videophone](https://teams.microsoft.com/l/meetup-join/19%3ameeting_OWNkOTU5MWMtZGRkYi00ZDIxLWI3NzAtZjFjMjc3Y2NiMmVl%40thread.v2/0?context=%7b%22Tid%22%3a%22766317cb-e948-4e5f-8cec-dabc8e2fd5da%22%2c%22Oid%22%3a%2261aab78b-a857-4647-9668-83d4cca5de03%22%7d)
 - [Download Unity](https://unity3d.com/unity/whats-new/2022.1.14)
 - [Course Notes (out of date!)](https://drive.google.com/open?id=1CeMUWjCUa1Ere2fMmtLz5TCL4O136mxj)
 - [Assignment](assignment.md)
@@ -14,6 +15,85 @@
 ## Contact me
 * Email: bryan.duggan@tudublin.ie
 * [My website & other ways to contact me](http://bryanduggan.org)
+
+## Week 8 - Physics 1, Probuilder & Assignment stuff
+
+## Lecture
+- [Physics 1](https://drive.google.com/open?id=1rYFVCwmL81sEUD-b-Nt-1lmMKw-4XDi0)
+- [Physics 2](https://drive.google.com/open?id=1ZGWsmDz9uIJEUf2HPBV2JyYxv1RswPar)
+- [Physics 3](https://drive.google.com/open?id=1Tncqb27Cg8LpqHqrtSfcZlgeqTo-HpE8)
+
+## Lab
+
+### Use Probuilder
+- [Watch this tutorial](https://www.youtube.com/watch?v=PUSOg5YEflM)
+- Install Probuilder into your project
+- Make a model 
+
+OR Do this old lab exercise: 
+
+### Learning outcomes
+- Write a physics integration function from scratch
+- Use trigonometry
+- Make a path following AI
+
+Today lets use the [Seek steering behaviour](https://natureofcode.com/book/chapter-6-autonomous-agents/) as inspiration to make this little scenario:
+
+[![YouTube](http://img.youtube.com/vi/BuyQNxwLC9g/0.jpg)](http://www.youtube.com/watch?v=BuyQNxwLC9g)
+
+- Make a Path MonoBehaviour that has a public List of Vector3. Use trigonometry to create the elements of the vector. You can also add gizmos so that the path can be seen in the Unity editor. This class does not need an Update method. It is just a container for the waypoints
+- Make a PathFollower MonoBehaviour that has a public field for the path (that you can drag the Path onto) and another public field for the current waypoint. This class should have an Update method that steers the gameobject towards the current waypoint. When it gets close it should advance to the next
+- Make a prefab consisting of a Cube with a TrailRenderer attached. Attach the Pathfollower
+- Make a Spawner that spans the prefabs and assigns the path. You can offset the current waypoint for each one that you spawn
+
+## Week 7 - Quaternions
+- [Slides on quaternions](https://drive.google.com/file/d/11-KFbodaAl9dRSs9ljzdDyTDp1QWWnsZ/view?usp=sharing)
+- [Vectors in Unity](https://docs.unity3d.com/Manual/UnderstandingVectorArithmetic.html)
+- [Video of the class](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/EeD7K_m64VpDiZVGsJUM-lkBE7p4x1P-5PTCHFfo2FEjcg?e=eX5wJq)
+
+My popular Quaternions in Unity Video:
+
+
+[![YouTube](http://img.youtube.com/vi/IXySkVFNhdk/0.jpg)](http://www.youtube.com/watch?v=IXySkVFNhdk)
+
+An ode to Quaternions
+
+A quaternion is like a vector, but with a "w"
+
+To construct one, use an axis and an angle, that's what we do
+
+For rotations it must be normal, or otherwise its pure
+
+So we normalise, divide by length, just to be sure
+
+To invert a normal quaternion, we negate x, y and z
+
+Multiply quaternion, vector, inverse quaternion and it rotates don't you see
+
+A rotation of 0 radians is the same as two pi
+
+To convert a quaternion to a matrix, we use the API
+
+So here's a health to old Hamilton, your inventor it would appear
+
+And to imaginary numbers floating in the hypersphere
+
+- Dr Bryan Duggan
+
+## Lab
+
+Today lets make this system:
+
+[![YouTube](http://img.youtube.com/vi/utJ5uUouxuA/0.jpg)](http://www.youtube.com/watch?v=utJ5uUouxuA)
+
+The system is a turret AI system for a game such as a tower defence game. In the video below, the red "tower" will turn to face the players tank and start shooting as soon as the player comes in range. To create this system:
+
+- Make the turret from two cubes and set a spawn point for bullets on the turret
+- Add a TurretController component to the turret. Add fields for rotationSpeed and fireRate (and any others you might need)
+- Use a SphereCollider on the turret and set isTrigger to be true
+- Override OnTriggerEnter and OnTriggerStay to detect the player
+- Use quaternions to rotate the turret
+- Use a co-routine to shoot multiple times per second
 
 ## Week 6 - Coroutines & colliders
 
